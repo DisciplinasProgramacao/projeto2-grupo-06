@@ -1,4 +1,7 @@
 package business;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 
 /** 
  * MIT License
@@ -66,7 +69,18 @@ public class Grafo {
     }
 
     public void salvar(String nomeArquivo){
-        
+        try {
+    	    BufferedWriter writer = new BufferedWriter(new FileWriter(nomeArquivo));
+    	    for (Vertice vertices : vertices.getId()) {
+    	        writer.write("V " + vertices.getId() + "\n");
+    	    }
+    	    for (Aresta arestas : arestas.destino() + arestas.peso()) {
+    	        writer.write("E " + "Destino: " + arestas.destino() + "Peso: " + arestas.peso() + "\n");
+    	    }
+    	    writer.close();
+    	} catch (IOException e) {
+    	    System.out.println("Erro ao salvar o grafo: " + e.getMessage());
+    	}
     }
     
     /**
