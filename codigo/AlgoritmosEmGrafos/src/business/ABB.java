@@ -93,4 +93,21 @@ public class ABB<T> {
         T[] allData = this.data.values().toArray(array);
         return allData;
     }
+    
+    public Aresta[] emOrdem() {
+        List<Aresta> list = new ArrayList<>();
+        emOrdem(this.data.firstEntry().getKey(), this.data.lastEntry().getKey(), list);
+        return list.toArray(new Aresta[list.size()]);
+    }
+
+    private void emOrdem(int start, int end, List<Aresta> list) {
+        if(start > end) {
+            return;
+        }
+        int mid = start + (end - start) / 2;
+        emOrdem(start, mid - 1, list);
+        Aresta element = (Aresta) this.data.get(mid);
+        list.add(element);
+        emOrdem(mid + 1, end, list);
+    }
 }
