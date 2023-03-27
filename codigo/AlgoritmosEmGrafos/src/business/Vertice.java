@@ -70,6 +70,14 @@ public class Vertice {
 
     }
     
+    public List<Integer> vizinhos() {
+        List<Integer> vizinhos = new ArrayList<Integer>();
+        for (Aresta aresta : this.arestas.emOrdem()) {
+            vizinhos.add(aresta.destino());
+        }
+        return vizinhos;
+    }
+    
     /**
      * Remove e retorna a aresta para o destino indicado. Retorna null caso não exista a aresta.
      * @param destino Destino da aresta a ser removida.
