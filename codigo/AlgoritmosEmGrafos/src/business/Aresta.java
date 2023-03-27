@@ -26,7 +26,7 @@ package business;
 
 public class Aresta {
 
-    private int peso;
+    public int peso;
     private int destino;
     private boolean visitada;
 
