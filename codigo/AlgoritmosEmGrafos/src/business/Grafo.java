@@ -136,9 +136,28 @@ public class Grafo {
     }
 
     public Grafo subGrafo(Lista<Integer> vertices){
-        Grafo subgrafo = new Grafo("Subgrafo de "+this.nome);
-        
-        return subgrafo;
+        Vertice[] vetV = new Vertice[this.vertices.size()];
+vetV = this.vertices.allElements(vetV);
+
+for(int i = 0; i < vetV.length; i++) {
+if(!vertices.getData.contains(vetV[i].getId())) {
+this.vertices.remove(vetV[i].getId());
+} else {
+Aresta[] vetA = new Aresta[vetV[i].grau()];
+vetA = vetV[i].getArestas().allElements(vetA);
+
+for(int j = 0; j < vetA.length; j++) {
+if(!vertices.getData.contains(vetA[j].destino())) {
+this.vertices.find(vetV[i].getId()).removeAresta(vetA[j].destino());
+}
+}
+
+}
+
+}
+
+return this;
+}
     }
     
     public int tamanho(){
