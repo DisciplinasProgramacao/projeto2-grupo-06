@@ -9,11 +9,11 @@ class GrafoTest {
 
 	@Test
 	    public void testSalvarGrafo() {
-		Grafo grafo = new Grafo("teste");
+		Grafo grafo = new Grafo("teste.txt");
 		grafo.addVertice(1);
         	grafo.addVertice(2);
         	grafo.addVertice(3);
-        	grafo.addAresta(1, 2, 3);
+        	grafo.addAresta(1, 2, 0);
 	    	grafo.salvar("teste.txt");
 	    
 	    }
