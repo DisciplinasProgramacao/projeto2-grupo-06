@@ -176,8 +176,35 @@ public class Grafo {
         return Integer.MIN_VALUE;
     }
     
-    public Grafo bfs(int idVerticeInicio) {
-    	return null;
+       public Grafo bfs(int idVerticeInicio) { 
+        int contTrue = 1;
+        Vertice vet[] = new Vertice[this.vertices.size()];
+        vet = this.vertices.allElements(vet);
+        Grafo g = new GrafoNaoDirecionado("grafo do bts");
+        boolean allTrue = false;
+        int i = 1;
+        Vertice[] vetA = vet[i].getArestas().allElements(new Vertice[vet[i].grau()]);
+        
+        while (allTrue == false) {
+            contTrue = 1;
+            vetA = vet[i].getArestas().allElements(new Vertice[vet[i].grau()]);
+            g.vertices.add(vet[i].getId(), vet[i]);
+            for (int j = 0; j < vetA.length; j++) {
+                if (g.vertices.existeAresta(vetA[j].getId())) {
+                    g.vertices.add(vetA[j].getId(), vetA[j]);
+                    g.addAresta(vet[i].getId(), vetA[j].getId(), 1);
+                    contTrue++;
+                }
+            }
+            if (contTrue == 1 && i == vet.length - 1) {
+                allTrue = true;
+            } else if (contTrue == 1 && i < vet.length - 1) {
+                i++;
+            } else if (contTrue > 1) {
+                i = 1;
+            }
+        }
+        return g;
     }
 
     public Grafo dfs(int idVerticeInicio) {
