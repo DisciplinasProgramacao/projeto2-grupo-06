@@ -1,5 +1,6 @@
 package business;
 
+
 /** 
  * MIT License
  *
@@ -43,7 +44,11 @@ public class Aresta {
         this.origem = origem;
     }
 
-    /**
+    public Aresta(Vertice destino2, Vertice origem2, int peso2) {
+		
+	}
+
+	/**
      * Método de acesso para o peso da aresta
      * @return Peso da aresta (int)
      */
