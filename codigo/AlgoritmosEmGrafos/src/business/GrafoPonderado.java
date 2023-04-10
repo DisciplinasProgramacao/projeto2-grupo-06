@@ -1,3 +1,5 @@
+package business;
+
 public class GrafoPonderado {
 	private final int MAX_VERTICE = 10;
 	private Vertice[] Vertices;
