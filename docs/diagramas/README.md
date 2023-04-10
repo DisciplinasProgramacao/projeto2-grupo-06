@@ -1,2 +1,2 @@
 # Diagramas de classe
-![Diagrama](docs/diagramas/diagrama.png)
+![Diagrama](../docs/diagramas/diagrama.png)
