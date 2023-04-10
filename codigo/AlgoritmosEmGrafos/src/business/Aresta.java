@@ -26,19 +26,21 @@ package business;
 
 public class Aresta {
 
-    public int peso;
+    private int peso;
     private int destino;
     private boolean visitada;
+    private int origem;
 
     /**
      * Construtor para arestas com peso. A aresta é criada como não-visitada.
      * @param peso Peso da aresta
      * @param dest Vértice de destino
      */
-    public Aresta(int peso, int destino){
+    public Aresta(int peso, int destino, int origem){
         this.peso = peso;
         this.destino = destino;
         this.visitada = false;
+        this.origem = origem;
     }
 
     /**
@@ -79,6 +81,8 @@ public class Aresta {
         return this.visitada;
     }
 
-    
+    public int getOrigem(){
+		return this.origem;
+	}
 
 }
