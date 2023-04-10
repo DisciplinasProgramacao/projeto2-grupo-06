@@ -1,6 +1,4 @@
 package business;
-import java.util.ArrayList;
-import java.util.List; 
 
 /** 
  * MIT License
@@ -33,6 +31,7 @@ public class Vertice {
     private ABB <Aresta> arestas;    
     private final int id;
     private boolean visitado;
+    private char rotulo;
 
     /**
      * Construtor para criação de vértice identificado
@@ -50,10 +49,6 @@ public class Vertice {
      */
     public int getId(){
         return this.id;
-    }
-    
-    public ABB<Aresta> getArestas(int id) {
-    	return this.arestas;
     }
     
     public boolean addAresta(int destino){
@@ -74,14 +69,6 @@ public class Vertice {
     public Aresta existeAresta(int destino){
         return null;
 
-    }
-    
-    public List<Integer> vizinhos() {
-        List<Integer> vizinhos = new ArrayList<Integer>();
-        for (Aresta aresta : this.arestas.emOrdem()) {
-            vizinhos.add(aresta.destino());
-        }
-        return vizinhos;
     }
     
     /**
@@ -119,5 +106,13 @@ public class Vertice {
     public boolean visitado(){
         return this.visitado;
     }
+    
+    public char getrotulo(){
+		return this.rotulo;
+	}
+
+	public void setrotulo(char rotulo){
+		this.rotulo = rotulo;
+	}
 }
 
