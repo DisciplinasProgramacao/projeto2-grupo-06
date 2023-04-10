@@ -22,14 +22,14 @@ public class GrafoPonderado {
 		matrixDeAdjacencia[fim][inicio] = new Aresta(destino, origem, peso);
 	}
 
-	public void MostraGrafo(){
-		for(int i=0; i<matrixDeAdjacencia.length; i++){
-			for(int j=0; j<matrixDeAdjacencia[i].length; j++){
-				Aresta Aresta = matrixDeAdjacencia[i][j];
-				if(Aresta != null){
-					System.out.println(Aresta.getorigem().getrotulo() + " - " + Aresta.getdestino().getrotulo() + ": " + Aresta.getpeso());
-				}
-			}
-		}
-	}
+	//	public void MostraGrafo(){
+	//		for(int i=0; i<matrixDeAdjacencia.length; i++){
+	//			for(int j=0; j<matrixDeAdjacencia[i].length; j++){
+	//				Aresta Aresta = matrixDeAdjacencia[i][j];
+	//			if(Aresta != null){
+	//				System.out.println(Aresta.getOrigem() + " - " + Aresta.destino() + ": " + Aresta.peso());
+	//			}
+	//		}
+	//	}
+	//}
 }
