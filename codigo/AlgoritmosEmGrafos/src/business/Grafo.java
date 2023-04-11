@@ -63,10 +63,34 @@ public class Grafo {
         return this.nome;
     }
 
-
-    public void carregar(String nomeArquivo){
-
-    }
+    public void carregar(String nomeArquivo) {
+    	Scanner entrada; 
+        File arquivo = new File(nomeArquivo);
+        try {
+	        entrada = new Scanner(arquivo);
+	        Vertice v;
+	        int origem, destino, peso = 0;
+	        int arestas = entrada.nextInt();
+	        entrada.nextLine();
+	        
+	        for(int i = 0 ; i < arestas; i++) {
+	        	origem = entrada.nextInt();
+	        	destino = entrada.nextInt();
+	        	peso = entrada.nextInt();
+	            System.out.println("Origem:"+origem+" Destino:"+destino);
+	            entrada.nextLine();
+	            v = new Vertice(origem);
+	            if(peso == 0)
+	            	v.addAresta(destino);
+	            else
+	            	v.addAresta(destino, peso);
+	        }
+	        entrada.close();
+        }
+        catch(IOException FileNotFoundException) {
+        	System.out.println("Arquivo não encontrado.");
+        }
+  }
 
     public void salvar(String nomeArquivo){
         try {
