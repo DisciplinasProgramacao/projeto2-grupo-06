@@ -169,7 +169,15 @@ public class Grafo {
     
     
     public boolean completo(){
-       return false;
+    	 Vertice v[] = new Vertice[ordem()]; 
+         v = this.vertices.allElements(v);
+         
+         for(int i = 0; i < ordem(); i++) {
+             if(v[i].grau() != (ordem()-1)) 
+             return false;
+         }
+
+        return true;
     }
 
     public Grafo subGrafo(Lista<Integer> vertices){
