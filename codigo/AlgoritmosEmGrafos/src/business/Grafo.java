@@ -163,7 +163,8 @@ public class Grafo {
     }
 
     public Aresta existeAresta(int verticeA, int verticeB){
-    	
+    	Vertice inicio = vertices.find(verticeA);
+        return inicio.existeAresta(verticeB);
     }
     
     
