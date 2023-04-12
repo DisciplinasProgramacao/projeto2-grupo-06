@@ -62,12 +62,12 @@ public class Vertice {
      * @return TRUE se foi inserida, FALSE caso já existisse e não foi inserida.
      */
     public boolean addAresta(int destino, int peso){
-        return this.arestas.add(destino,new Aresta(peso, destino));
+        return this.arestas.add(destino,new Aresta(this.getId(), destino, peso));
     }
 
     
     public Aresta existeAresta(int destino){
-        return null;
+    	return this.arestas.find(destino);
 
     }
     
@@ -82,7 +82,7 @@ public class Vertice {
   
   
     public int grau(){
-        return Integer.MIN_VALUE;
+        return this.arestas.size();
     }
 
     /**
