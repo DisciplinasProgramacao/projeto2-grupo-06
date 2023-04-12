@@ -1,6 +1,10 @@
 package app;
 import java.util.Scanner;
 
+import business.Aresta;
+import business.Grafo;
+import business.GrafoPonderado;
+
 public class Aplicacao {
 
     public static void main(String[] args) throws Exception {

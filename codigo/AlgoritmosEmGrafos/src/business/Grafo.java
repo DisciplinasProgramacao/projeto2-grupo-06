@@ -253,6 +253,25 @@ return this;
         return g;
     }
 
-       public Grafo dfs(int idVerticeInicio) {
-    	   
+       public void grafoDFS() {
+    	    boolean[] visitados = new boolean[this.vertices.size()];
+    	    for(int i = 0; i < visitados.length; i++) {
+    	        visitados[i] = false;
+    	    }
+    	    for(Vertice v : vertices) {
+    	        if(!visitados[v.getId()]) {
+    	            dfs(v, visitados);
+    	        }
+    	    }
+    	}
+
+    	private void dfs(Vertice v, boolean[] visitados) {
+    	    visitados[v.getId()] = true;
+    	    System.out.print(v.getId() + " ");
+    	    for(Aresta a : v.getArestas()) {
+    	        if(!visitados[a.destino()]) {
+    	            dfs(vertices.find(a.destino()), visitados);
+    	        }
+    	    }
+    	}
 }
