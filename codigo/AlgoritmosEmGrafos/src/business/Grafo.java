@@ -151,8 +151,16 @@ public class Grafo {
     }
 
 
-    public Aresta removeAresta(int origem, int destino){
-        return null;
+    public boolean removeAresta(int origem, int destino){
+    	boolean removeu = false;
+        Vertice saida = this.existeVertice(origem);
+        Vertice chegada = this.existeVertice(destino);
+        if(saida!=null && chegada !=null){
+            saida.removeAresta(origem);
+            chegada.removeAresta(destino);
+            removeu = true;
+        }
+        return removeu;
     }
 
     public Aresta existeAresta(int verticeA, int verticeB){
@@ -193,7 +201,7 @@ return this;
     }
 
     public int ordem(){
-        return Integer.MIN_VALUE;
+        return vertices.size();
     }
     
        public Grafo bfs(int idVerticeInicio) { 
@@ -227,7 +235,6 @@ return this;
         return g;
     }
 
-    public Grafo dfs(int idVerticeInicio) {
-    	return null;
-    }
+       public Grafo dfs(int idVerticeInicio) {
+    	   
 }
