@@ -124,11 +124,11 @@ public class Grafo {
     }
 
     public Vertice removeVertice(int id){
-        return null;
+        return vertices.remove(id);
     }
 
     public Vertice existeVertice(int idVertice){
-        return null;
+    	return vertices.find(idVertice);
     }
 
     /**
@@ -164,7 +164,15 @@ public class Grafo {
     }
 
     public Aresta existeAresta(int verticeA, int verticeB){
-       return null;
+    	boolean existe = false;
+        Vertice saida = this.existeVertice(verticeA);
+        Vertice chegada = this.existeVertice(verticeB);
+        if(saida!=null && chegada !=null){
+         saida.existeAresta(verticeA);
+         chegada.existeAresta(verticeB);
+         existe = true;
+        }
+        return 
     }
     
     
@@ -196,6 +204,10 @@ this.vertices.find(vetV[i].getId()).removeAresta(vetA[j].destino());
 return this;
 }
     
+    /**
+     * Retorna o número de arestas do grafo.
+     * @return O número de arestas do grafo
+     */
     public int tamanho(){
     	int tam=0;
         Vertice[] v = new Vertice[ordem()];
