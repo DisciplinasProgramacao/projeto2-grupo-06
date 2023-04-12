@@ -151,28 +151,19 @@ public class Grafo {
     }
 
 
-    public boolean removeAresta(int origem, int destino){
-    	boolean removeu = false;
+    public Aresta removeAresta(int origem, int destino){
+    	
         Vertice saida = this.existeVertice(origem);
         Vertice chegada = this.existeVertice(destino);
         if(saida!=null && chegada !=null){
-            saida.removeAresta(origem);
-            chegada.removeAresta(destino);
-            removeu = true;
+        	saida.removeAresta(origem);
+        	saida.removeAresta(destino);
         }
-        return removeu;
+          
     }
 
     public Aresta existeAresta(int verticeA, int verticeB){
-    	boolean existe = false;
-        Vertice saida = this.existeVertice(verticeA);
-        Vertice chegada = this.existeVertice(verticeB);
-        if(saida!=null && chegada !=null){
-         saida.existeAresta(verticeA);
-         chegada.existeAresta(verticeB);
-         existe = true;
-        }
-        return 
+    	
     }
     
     
