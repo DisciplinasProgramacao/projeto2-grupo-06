@@ -114,5 +114,11 @@ public class Vertice {
 	public void setrotulo(char rotulo){
 		this.rotulo = rotulo;
 	}
+
+	public ABB<Aresta> getArestas(int id) {
+	    	return this.arestas;
+	    }
+	
+	
 }
 

@@ -112,4 +112,9 @@ public class ABB<T> {
         list.add(element);
         emOrdem(mid + 1, end, list);
     }
+    
+    @Override
+    public String toString() {
+    	return this.data.toString();
+    }
 }

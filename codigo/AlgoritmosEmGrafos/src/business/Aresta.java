@@ -89,5 +89,10 @@ public class Aresta {
     public int getOrigem(){
 		return this.origem;
 	}
+    
+    @Override
+    public String toString() {
+        return "Origem" + origem + "Destino" + destino + "Peso" + peso;
+      }
 
 }

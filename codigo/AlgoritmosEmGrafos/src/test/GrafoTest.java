@@ -1,5 +1,6 @@
 package test;
 import business.Grafo;
+import business.GrafoNaoDirecionado;
 
 import static org.junit.jupiter.api.Assertions.*;
 
