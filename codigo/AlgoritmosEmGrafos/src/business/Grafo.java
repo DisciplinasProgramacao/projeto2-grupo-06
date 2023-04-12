@@ -197,7 +197,13 @@ return this;
 }
     
     public int tamanho(){
-        return Integer.MIN_VALUE;
+    	int tam=0;
+        Vertice[] v = new Vertice[ordem()];
+        v = vertices.allElements(v);
+        for(int i=0;i<v.length;i++){
+            tam+=v[i].grau();
+        }
+        return tam/2;
     }
 
     public int ordem(){
